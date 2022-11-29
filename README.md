@@ -86,18 +86,26 @@ In future work, we hope that this function sees more iterations of development. 
 
 ### Task: Lift
 ### Type: All
+
 <img width="549" alt="Screenshot 2022-11-28 at 7 20 20 PM" src="https://user-images.githubusercontent.com/61725820/204414959-bd8dc39a-6129-4915-a153-dfcf43dddbae.png">
 
 [Naive BC]: Removing the low-quality data allows for expert performance, as in original robomimic
+
 [DT-1, PH Only]: Removing the low-quality data allows for expert performance, as in original robomimic
+
 [DT-20]: Decision Transformer can (mostly) filter the good demonstrations from the machine-generated noise
 
 ### Task: Can
 ### Type: All
+
 <img width="528" alt="Screenshot 2022-11-28 at 7 22 16 PM" src="https://user-images.githubusercontent.com/61725820/204415220-3637ad38-7dfb-424d-8990-c801f53ca4f6.png">
+
 <img width="532" alt="Screenshot 2022-11-28 at 7 20 42 PM" src="https://user-images.githubusercontent.com/61725820/204415001-e8c753bf-cd8a-4d49-b192-4bb32e84669b.png">
+
 [DT-3]: Action and RTG input sequence makes this task significantly more difficult. But DT is much better than naive BC
+
 [DT-3, DT-10, DT-20, all small]: Smaller Transformer sizes decrease performance in the can task
+
 [DT-3, Gaussian, Large]: Standard Gaussian policies are less capable of modeling multi-modal action distributions than our Gaussian Mixture Model default
 
 <!-- CONTACT -->
