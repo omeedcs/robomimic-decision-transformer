@@ -55,6 +55,8 @@ Lift: lift the cube
 
 Can: pick up the can and place it in proper spot 
 
+We chose these because they have large amounts of low quality machine generated data, which supports our goal of return conditioning on mixed quality data. 
+
 ## Our Decision Transformer Architecutre
 
 ![new_arc_decision_transformer](https://user-images.githubusercontent.com/61725820/204408002-9ba41db7-3dd6-454d-a79c-bcfcf1398754.gif)
@@ -63,11 +65,15 @@ We input state, actions, and returns-to-go into a causal transformer to get our 
 
 # The Semi-Sparse Reward Function:
 
-We manually altered the reward function to add a semi-sparse success bonus that decreased on every time step, giving a wider distribution of target RTGs for the decision transformer than the default binary option of success in robomimic. The max sequence is 500, so if you go past 500 time steps you get nothing!
+During development, we found that robomimic uses sparse rewards due to a binary (success or no success) in the sequence data. We attempted to enable dense rewards in robomimic, but found that the dense reward returned was uncorrelated with dataset quality. 
+
+Through debugging, this led to us manually altering the reward function to add a semi-sparse success bonus that decreased on every time step, giving a wider distribution of target RTGs for the decision transformer than the default binary option of success in robomimic. The max sequence is 500, so if you go past 500 time steps you get nothing!
 
 **The Function:** max(500 - success time, 0)
 
-In future work, we hope that this function sees more iterations of development. We can also alter the dense reward in the robomimic dataset.
+In future work, we hope that this function sees more iterations of development, and possibly altering the actual dense reward and not the function itself. 
+
+With this change, we altered the training data accordingly, as you can see in the new SequenceDataset.
 
 ## Results
 
