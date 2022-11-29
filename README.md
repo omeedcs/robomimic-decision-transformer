@@ -112,5 +112,7 @@ In future work, we hope that this function sees more iterations of development. 
 ## Contact
 
 Alex Chandler - alex.chandler@utexas.edu
+
 Jake Grigsby grigsby@cs.utexas.edu
+
 Omeed Tehrani omeed@cs.utexas.edu
