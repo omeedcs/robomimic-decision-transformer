@@ -71,6 +71,34 @@ In future work, we hope that this function sees more iterations of development. 
 
 ## Results
 
+### Found that return and past-action conditioning can make robomimic tasks more difficult:
+<img width="555" alt="Screenshot 2022-11-28 at 7 16 24 PM" src="https://user-images.githubusercontent.com/61725820/204414506-0e24d601-107d-4ea5-b29a-70d2a4fcef63.png">
+
+### Longer sequence modeling improves action prediction and eases problems caused by multi-modal demonstrations:
+<img width="545" alt="Screenshot 2022-11-28 at 7 16 46 PM" src="https://user-images.githubusercontent.com/61725820/204414556-c62a22a3-a45c-4929-9bce-9616279e417f.png">
+
+### Decision Transformer lets us model the whole range of returns, not just the expert:
+<img width="471" alt="Screenshot 2022-11-28 at 7 18 41 PM" src="https://user-images.githubusercontent.com/61725820/204414774-def64ce3-6538-4ae9-b2c0-96b12492210d.png">
+
+
+
+### Data Tables: 
+
+### Task: Lift
+### Type: All
+<img width="549" alt="Screenshot 2022-11-28 at 7 20 20 PM" src="https://user-images.githubusercontent.com/61725820/204414959-bd8dc39a-6129-4915-a153-dfcf43dddbae.png">
+
+[Naive BC]: Removing the low-quality data allows for expert performance, as in original robomimic
+[DT-1, PH Only]: Removing the low-quality data allows for expert performance, as in original robomimic
+[DT-20]: Decision Transformer can (mostly) filter the good demonstrations from the machine-generated noise
+
+### Task: Can
+### Type: All
+<img width="528" alt="Screenshot 2022-11-28 at 7 22 16 PM" src="https://user-images.githubusercontent.com/61725820/204415220-3637ad38-7dfb-424d-8990-c801f53ca4f6.png">
+<img width="532" alt="Screenshot 2022-11-28 at 7 20 42 PM" src="https://user-images.githubusercontent.com/61725820/204415001-e8c753bf-cd8a-4d49-b192-4bb32e84669b.png">
+[DT-3]: Action and RTG input sequence makes this task significantly more difficult. But DT is much better than naive BC
+[DT-3, DT-10, DT-20, all small]: Smaller Transformer sizes decrease performance in the can task
+[DT-3, Gaussian, Large]: Standard Gaussian policies are less capable of modeling multi-modal action distributions than our Gaussian Mixture Model default
 
 <!-- CONTACT -->
 ## Contact
@@ -78,4 +106,3 @@ In future work, we hope that this function sees more iterations of development. 
 Alex Chandler - alex.chandler@utexas.edu
 Jake Grigsby grigsby@cs.utexas.edu
 Omeed Tehrani omeed@cs.utexas.edu
-
